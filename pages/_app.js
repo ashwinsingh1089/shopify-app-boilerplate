@@ -6,7 +6,7 @@ import translations from '@shopify/polaris/locales/en.json';
 import { Provider } from '@shopify/app-bridge-react';
 import Cookies from 'js-cookie';
 import ClientRouter from '../components/ClientRouter';
-import { ApolloClient } from 'apollo-boost';
+import  ApolloClient  from 'apollo-boost';
 import { ApolloProvider } from 'react-apollo';
 
 const client = new ApolloClient({
@@ -28,7 +28,7 @@ class MyApp extends App{
 				<Provider config={config}>
 					<ClientRouter/>
 					<AppProvider i18n={translations}>
-						<ApolloProvider>
+						<ApolloProvider client={client}>
 							<Component {...pageProps} />
 						</ApolloProvider>
 					</AppProvider>
